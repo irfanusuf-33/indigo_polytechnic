@@ -90,7 +90,6 @@ export default function Home() {
   return (
     <main className="font-pop">
       <section className="flex flex-col items-center justify-center overflow-hidden bg-[#F2F3F4] px-6 pb-0 pt-8 sm:pt-12 lg:pt-16">
-        
         <div className="mb-10 flex w-full max-w-lg items-center rounded-full border border-zinc-200 bg-white px-2 py-2 shadow-sm">
           <svg
             className="ml-2 mr-2 h-5 w-5 shrink-0 text-[#0C06DA]"
@@ -150,9 +149,8 @@ export default function Home() {
         </div>
       </section>
 
-     
       <section className="flex flex-col items-center px-6 py-20 text-center">
-        {/* Eyebrow */}
+        
         <span className="mb-6 flex items-center gap-2 rounded-full bg-[#09049B] px-4 py-1.5 text-xs font-semibold uppercase font-pop italic tracking-wide text-white">
           <span className="h-1.5 w-1.5 rounded-full bg-white " />
           Explore Programs
@@ -168,7 +166,6 @@ export default function Home() {
           you succeed in today&apos;s competitive world.
         </p>
 
-        
         <div className="mt-10 flex flex-wrap items-center justify-center gap-8">
           {programs.map((program) => (
             <div
@@ -222,7 +219,6 @@ export default function Home() {
             </button>
           </div>
 
-          
           <div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               {courses.map((course) => (
@@ -289,7 +285,6 @@ export default function Home() {
               ))}
             </div>
 
-            
             <div className="mt-6 flex items-center justify-center gap-2">
               {[0, 1, 2].map((i) => (
                 <button
@@ -321,7 +316,6 @@ export default function Home() {
           simple, quick, and hassle-free.
         </p>
 
-        {/* Steps */}
         <div className="relative mt-6 lg:mt-10 flex flex-col items-center justify-center gap-15 lg:flex-row lg:items-start lg:gap-40">
           {steps.map((step, index) => (
             <div key={step.number} className="flex items-start">
@@ -350,7 +344,6 @@ export default function Home() {
                 </div>
               )}
 
-              
               {index === 0 && (
                 <div className="absolute left-80 top-7  w-75 -translate-x-1/2 items-center lg:flex">
                   <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-[#BABABA]" />
@@ -367,7 +360,6 @@ export default function Home() {
 
       <div className="absolute left-1/2 h-0.5 w-[80%] lg:w-[70%] -translate-x-1/2 bg-[#EAEAEA]" />
 
-     
       <section className="flex flex-col items-center px-6 pb-20 pt-20 text-center">
         <span className="mb-6 flex items-center gap-2 rounded-full bg-[#09049B] px-4 py-1.5 text-xs font-semibold uppercase italic tracking-wide text-white">
           <span className="h-1.5 w-1.5 rounded-full bg-white" />
@@ -385,9 +377,7 @@ export default function Home() {
           engaging, and career-focused.
         </p>
 
-        
         <div className="mt-12 flex w-full max-w-6xl flex-col gap-3">
-          {/* Top Row */}
           <div className="flex gap-3">
             {topRow.map((img) => (
               <div
@@ -404,7 +394,6 @@ export default function Home() {
             ))}
           </div>
 
-          
           <div className="flex gap-3">
             {bottomRow.map((img) => (
               <div
@@ -445,7 +434,6 @@ export default function Home() {
               for upcoming intakes.
             </p>
 
-           
             <div className="order-4 relative mt-8 h-64 w-full overflow-hidden rounded-2xl bg-white lg:hidden">
               <Image
                 src="/images/admissions-panel.png"
@@ -456,7 +444,6 @@ export default function Home() {
               />
             </div>
 
-           
             <div className="order-5 mt-8 flex flex-wrap items-center gap-4">
               <button className="flex items-center gap-2 rounded-lg bg-white px-5 py-2 font-pop text-sm font-normal text-[#0C06DA] transition hover:bg-white/90">
                 Apply Now
@@ -475,7 +462,6 @@ export default function Home() {
             </div>
           </div>
 
-         
           <div className="relative hidden h-72 w-full max-w-sm flex-1 overflow-hidden rounded-2xl bg-white lg:block">
             <Image
               src="/images/admissions-panel.png"

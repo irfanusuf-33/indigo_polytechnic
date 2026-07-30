@@ -352,7 +352,6 @@ export default function AboutPage() {
             <div className="absolute bottom-[3px] -left-[3px] h-[105px] w-[88px] rounded-bl-[24px] border-b-[4px] border-l-[4px] border-[#09049B]" />
 
             <div className="relative min-h-[270px] rounded-[24px] border border-[#E5E5E5] bg-white px-7 pb-6 pt-7 shadow-[0_2px_8px_rgba(0,0,0,0.08)] ">
-              {/* Icon */}
               <div className="flex h-[57px] w-[57px] items-center justify-center rounded-[12px] bg-[#09049B]">
                 <img
                   src="/images/approach.png"

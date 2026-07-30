@@ -20,7 +20,7 @@ export default function ContactPage() {
           </span>
 
           <h1 className="text-3xl font-bold text-white sm:text-5xl">
-            Let's <span className="text-[#3B82F6]">Talk</span> About Your Future
+            Lets <span className="text-[#3B82F6]">Talk</span> About Your Future
           </h1>
 
           <p className="mt-4 max-w-xl text-sm text-white/90 sm:text-base">
