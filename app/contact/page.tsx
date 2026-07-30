@@ -48,15 +48,12 @@ export default function ContactPage() {
                 Conversation
               </h2>
 
-              {/* Description */}
               <p className="mt-4 max-w-md font-pop text-sm text-[#8A8A8A]">
                 From choosing the right program to understanding the application
                 process, we&apos;re here to support you every step of the way.
               </p>
 
-              {/* Contact Information */}
               <div className="mt-8 flex flex-col gap-4">
-                {/* Visit Campus */}
                 <div className="flex w-[350px] items-center gap-4 rounded-xl bg-[#EEF0FC] px-5 py-4">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-[#0C06DA]">
                     <svg
@@ -83,7 +80,6 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Email */}
                 <div className="flex w-[350px] items-center gap-4 rounded-xl bg-[#EEF0FC] px-5 py-4">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-[#0C06DA]">
                     <svg
@@ -112,7 +108,6 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Phone */}
                 <div className="flex w-[350px] items-center gap-4 rounded-xl bg-[#EEF0FC] px-5 py-4">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-[#0C06DA]">
                     <svg
@@ -142,14 +137,12 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Right Column — Form */}
             <div>
               <h3 className="mb-6 text-lg font-semibold text-[#09049B] font-pop">
                 Drop us a message
               </h3>
 
               <form className="flex flex-col gap-5">
-                {/* Name + Email */}
                 <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                   <div>
                     <label className="mb-1.5 block text-sm font-medium text-[#000000] font-pop ">
@@ -176,7 +169,6 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Phone */}
                 <div>
                   <label className="mb-1.5 block text-sm font-medium text-[#000000] font-pop ">
                     Phone
@@ -189,7 +181,6 @@ export default function ContactPage() {
                   />
                 </div>
 
-                {/* Message */}
                 <div>
                   <label className="mb-1.5 block text-sm font-medium text-[#000000] font-pop ">
                     Message
@@ -202,7 +193,6 @@ export default function ContactPage() {
                   />
                 </div>
 
-                {/* Submit Button */}
                 <button
                   type="submit"
                   className="w-fit rounded-lg bg-[#0C06DA] px-6 py-3 text-sm font-normal text-white transition hover:bg-[#0a05b8]font-pop "

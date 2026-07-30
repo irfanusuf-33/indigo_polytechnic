@@ -6,11 +6,8 @@ const Footer = () => {
   return (
     <footer className="bg-white px-6 py-14 font-pop shadow-[inset_0_4px_12px_rgba(0,0,0,0.08)]">
       <div className="mx-auto max-w-[92%]">
-        {/* Main Footer Content */}
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_0.8fr_0.9fr_1fr] lg:gap-4">
-          {/* Logo + Tagline + Socials */}
           <div>
-            {/* Logo */}
             <Link href="/" className="inline-flex items-center gap-2">
               <Image
                 src={logo}
@@ -22,15 +19,12 @@ const Footer = () => {
               />
             </Link>
 
-            {/* Tagline */}
             <p className="mt-4 max-w-xs text-sm leading-6 text-[#8A8A8A]">
               Industry-focused education that prepares students for successful
               careers.
             </p>
 
-            {/* Social Icons */}
             <div className="mt-5 flex items-center gap-3">
-              {/* Instagram */}
               <a
                 href="#"
                 aria-label="Instagram"
@@ -55,7 +49,6 @@ const Footer = () => {
                 </svg>
               </a>
 
-              {/* LinkedIn */}
               <a
                 href="#"
                 aria-label="LinkedIn"
@@ -70,7 +63,6 @@ const Footer = () => {
                 </svg>
               </a>
 
-              {/* Facebook */}
               <a
                 href="#"
                 aria-label="Facebook"
@@ -87,7 +79,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h3 className="mb-4 text-[16px] font-semibold text-[#000000]">
               Quick Links
@@ -141,7 +132,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Our Courses */}
           <div>
             <h3 className="mb-4 text-[16px] font-semibold text-[#000000]">
               Our Courses
@@ -177,14 +167,12 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Us */}
           <div>
             <h3 className="mb-4 text-[16px] font-semibold text-[#000000]">
               Contact Us
             </h3>
 
             <ul className="space-y-4">
-              {/* Email */}
               <li className="flex items-start gap-3 text-sm text-[#8A8A8A]">
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#0C06DA]/10">
                   <svg
@@ -211,7 +199,6 @@ const Footer = () => {
                 </a>
               </li>
 
-              {/* Address */}
               <li className="flex items-start gap-3 text-sm text-[#8A8A8A]">
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#0C06DA]/10">
                   <svg
@@ -237,7 +224,6 @@ const Footer = () => {
                 </span>
               </li>
 
-              {/* Phone */}
               <li className="flex items-start gap-3 text-sm text-[#8A8A8A]">
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#0C06DA]/10">
                   <svg
@@ -266,7 +252,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="mt-10 flex flex-col items-center justify-between gap-3 rounded-2xl bg-[#E7E6FB] px-6 py-5 text-xs text-[#8A8A8A] sm:flex-row">
           <div className="flex items-center gap-2">
             <Link

@@ -37,18 +37,12 @@ const Navbar = () => {
 
   return (
     <nav className="relative z-50 bg-white shadow-sm">
-      {/* ================================================= */}
-      {/* MAIN NAVBAR */}
-      {/* ================================================= */}
-
       <div className="mx-auto flex h-20 max-w-[96%] items-center px-2.5 lg:max-w-[92%] lg:px-6">
         {/* ================================================= */}
         {/* MOBILE HEADER */}
         {/* ================================================= */}
 
         <div className="flex w-full items-center justify-between px-0 lg:hidden">
-          {/* LOGO */}
-
           <Link href="/" onClick={closeMenu}>
             <Image
               src={logo}
@@ -60,8 +54,6 @@ const Navbar = () => {
             />
           </Link>
 
-          {/* HAMBURGER BUTTON */}
-
           <button
             type="button"
             onClick={handleMenuToggle}
@@ -72,7 +64,6 @@ const Navbar = () => {
             className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#EAEAEA] text-[#0C06DA] transition-colors hover:bg-[#E5F2F0]"
           >
             {isMenuOpen ? (
-              /* CLOSE ICON */
               <svg
                 className="h-6 w-6"
                 fill="none"
@@ -87,7 +78,6 @@ const Navbar = () => {
                 />
               </svg>
             ) : (
-              /* HAMBURGER ICON */
               <svg
                 className="h-6 w-6"
                 fill="none"
@@ -138,8 +128,6 @@ const Navbar = () => {
             Home
           </Link>
 
-          {/* ABOUT */}
-
           <Link
             href="/about"
             className={`relative text-sm font-medium transition-colors ${
@@ -148,8 +136,6 @@ const Navbar = () => {
           >
             About
           </Link>
-
-          {/* COURSES */}
 
           <div className="group relative">
             <Link
@@ -161,8 +147,6 @@ const Navbar = () => {
               Courses
               <span className="mt-[1px] h-1.5 w-1.5 rotate-45 border-b border-r border-current transition-transform duration-200 group-hover:-rotate-[135deg]" />
             </Link>
-
-            {/* COURSES DROPDOWN */}
 
             <div className="invisible absolute left-1/2 top-full z-50 mt-4 w-56 -translate-x-1/2 translate-y-2 rounded-xl border border-gray-100 bg-white p-2 opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
               <Link
@@ -188,8 +172,6 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* STUDENT RESOURCES */}
-
           <div className="group relative">
             <Link
               href="/admissions"
@@ -200,8 +182,6 @@ const Navbar = () => {
               Student Resources
               <span className="mt-[1px] h-1.5 w-1.5 rotate-45 border-b border-r border-current transition-transform duration-200 group-hover:-rotate-[135deg]" />
             </Link>
-
-            {/* STUDENT RESOURCES DROPDOWN */}
 
             <div className="invisible absolute right-0 top-full z-50 mt-4 w-56 translate-y-2 rounded-xl border border-gray-100 bg-white p-2 opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
               <Link
@@ -219,8 +199,6 @@ const Navbar = () => {
               </Link>
             </div>
           </div>
-
-          {/* CONTACT */}
 
           <Link
             href="/contact"
@@ -259,8 +237,6 @@ const Navbar = () => {
       >
         <div className="px-5 py-4">
           <div className="flex flex-col font-pop">
-            {/* HOME */}
-
             <Link
               href="/"
               onClick={closeMenu}
@@ -270,8 +246,6 @@ const Navbar = () => {
             >
               Home
             </Link>
-
-            {/* ABOUT */}
 
             <Link
               href="/about"
@@ -315,8 +289,6 @@ const Navbar = () => {
                   />
                 </svg>
               </button>
-
-              {/* COURSES SUBMENU */}
 
               <div
                 className={`grid transition-all duration-300 ${
@@ -388,8 +360,6 @@ const Navbar = () => {
                 </svg>
               </button>
 
-              {/* STUDENT RESOURCES SUBMENU */}
-
               <div
                 className={`grid transition-all duration-300 ${
                   openDropdown === "resources"
@@ -419,8 +389,6 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* CONTACT */}
-
             <Link
               href="/contact"
               onClick={closeMenu}
@@ -430,8 +398,6 @@ const Navbar = () => {
             >
               Contact
             </Link>
-
-            {/* LOGIN */}
 
             <Link
               href="/login"

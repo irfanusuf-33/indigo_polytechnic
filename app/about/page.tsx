@@ -34,7 +34,6 @@ export default function AboutPage() {
 
       <section className="px-6 py-20">
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-stretch gap-10 lg:grid-cols-[0.9fr_0.9fr_1fr]">
-          {/* Left Image + Banner */}
           <div className="flex flex-col gap-3">
             <div className="rounded-xl bg-[#09049B] px-5 py-4 text-center text-sm font-medium uppercase text-white">
               Students Equipped with
@@ -240,9 +239,7 @@ export default function AboutPage() {
           experience to build confidence and career-ready skills.
         </p>
         <div className="mt-10 flex w-full max-w-5xl items-start justify-center">
-          {/* Step 1 */}
           <div className="flex flex-col items-center">
-            {/* Number */}
             <div className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#0C06DA] text-xl font-bold text-[#000000]">
               1
             </div>
@@ -259,7 +256,6 @@ export default function AboutPage() {
           <div className="-mx-2 mt-8 flex-1 border-t-2 border-dotted border-[#0C06DA]" />
 
           <div className="flex flex-col items-center">
-            {/* Number */}
             <div className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#0C06DA] text-xl font-bold text-[#000000]">
               2
             </div>
@@ -275,7 +271,6 @@ export default function AboutPage() {
 
           <div className="-mx-2 mt-8 flex-1 border-t-2 border-dotted border-[#0C06DA]" />
 
-          {/* Step 3 */}
           <div className="flex flex-col items-center">
             <div className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#0C06DA] text-xl font-bold text-[#000000]">
               3
@@ -352,13 +347,10 @@ export default function AboutPage() {
 
         <div className="mt-14 grid w-full max-w-5xl grid-cols-1 gap-x-12 gap-y-12 sm:grid-cols-3">
           <div className="relative">
-            {/* Top Right Blue Border */}
             <div className="absolute right-[3px] -top-[3px] h-[105px] w-[88px] rounded-tr-[24px] border-r-[4px] border-t-[4px] border-[#09049B]" />
 
-            {/* Bottom Left Blue Border */}
             <div className="absolute bottom-[3px] -left-[3px] h-[105px] w-[88px] rounded-bl-[24px] border-b-[4px] border-l-[4px] border-[#09049B]" />
 
-            {/* Card */}
             <div className="relative min-h-[270px] rounded-[24px] border border-[#E5E5E5] bg-white px-7 pb-6 pt-7 shadow-[0_2px_8px_rgba(0,0,0,0.08)] ">
               {/* Icon */}
               <div className="flex h-[57px] w-[57px] items-center justify-center rounded-[12px] bg-[#09049B]">
@@ -369,12 +361,10 @@ export default function AboutPage() {
                 />
               </div>
 
-              {/* Title */}
               <h3 className="mt-7 text-[16px] font-semibold leading-5 text-[#000000]">
                 Customised Approach
               </h3>
 
-              {/* Description */}
               <p className="mt-2 max-w-[300px] text-[13px] font-normal leading-[17px] text-[#8A8A8A]">
                 Every institution has unique goals. We tailor our learning
                 solutions to align with your curriculum, student needs, and
@@ -382,17 +372,13 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          {/* Card 2 */}
+
           <div className="relative">
-            {/* Top Right Blue Border */}
             <div className="absolute right-[3px] -top-[3px] h-[105px] w-[88px] rounded-tr-[24px] border-r-[4px] border-t-[4px] border-[#09049B]" />
 
-            {/* Bottom Left Blue Border */}
             <div className="absolute bottom-[3px] -left-[3px] h-[105px] w-[88px] rounded-bl-[24px] border-b-[4px] border-l-[4px] border-[#09049B]" />
 
-            {/* Card */}
             <div className="relative min-h-[270px] rounded-[24px] border border-[#E5E5E5] bg-white px-7 pb-6 pt-7 shadow-[0_2px_8px_rgba(0,0,0,0.08)]">
-              {/* Icon */}
               <div className="flex h-[57px] w-[57px] items-center justify-center rounded-[12px] bg-[#09049B]">
                 <img
                   src="/images/support.png"
@@ -401,12 +387,10 @@ export default function AboutPage() {
                 />
               </div>
 
-              {/* Title */}
               <h3 className="mt-7 text-[16px] font-semibold leading-5 text-[#000000]">
                 Reliable Support
               </h3>
 
-              {/* Description */}
               <p className="mt-2 max-w-[300px] text-[13px] font-normal leading-[17px] text-[#8A8A8A]">
                 From onboarding and implementation to ongoing course delivery,
                 our dedicated team provides continuous guidance to ensure a
@@ -416,38 +400,31 @@ export default function AboutPage() {
           </div>
 
           <div className="relative">
-    {/* Top Right Blue Border */}
-    <div className="absolute right-[3px] -top-[3px] h-[105px] w-[88px] rounded-tr-[24px] border-r-[4px] border-t-[4px] border-[#09049B]" />
+            <div className="absolute right-[3px] -top-[3px] h-[105px] w-[88px] rounded-tr-[24px] border-r-[4px] border-t-[4px] border-[#09049B]" />
 
-    {/* Bottom Left Blue Border */}
-    <div className="absolute bottom-[3px] -left-[3px] h-[105px] w-[88px] rounded-bl-[24px] border-b-[4px] border-l-[4px] border-[#09049B]" />
+            <div className="absolute bottom-[3px] -left-[3px] h-[105px] w-[88px] rounded-bl-[24px] border-b-[4px] border-l-[4px] border-[#09049B]" />
 
-    {/* Card */}
-    <div className="relative min-h-[270px] rounded-[24px] border border-[#E5E5E5] bg-white px-7 pb-6 pt-7 shadow-[0_2px_8px_rgba(0,0,0,0.08)]">
-      
-      {/* Icon */}
-      <div className="flex h-[57px] w-[57px] items-center justify-center rounded-[12px] bg-[#09049B]">
-        <img
-          src="/images/proven.png"
-          alt="Proven Excellence"
-          className="h-7 w-7 object-contain"
-        />
-      </div>
+            <div className="relative min-h-[270px] rounded-[24px] border border-[#E5E5E5] bg-white px-7 pb-6 pt-7 shadow-[0_2px_8px_rgba(0,0,0,0.08)]">
+              <div className="flex h-[57px] w-[57px] items-center justify-center rounded-[12px] bg-[#09049B]">
+                <img
+                  src="/images/proven.png"
+                  alt="Proven Excellence"
+                  className="h-7 w-7 object-contain"
+                />
+              </div>
 
-      {/* Title */}
-      <h3 className="mt-7 text-[16px] font-semibold leading-5 text-[#000000]">
-        Proven Excellence
-      </h3>
+              <h3 className="mt-7 text-[16px] font-semibold leading-5 text-[#000000]">
+                Proven Excellence
+              </h3>
 
-      {/* Description */}
-      <p className="mt-2 max-w-[300px] text-[13px] font-normal leading-[17px] text-[#8A8A8A]">
-        With a strong commitment to quality, innovation, and industry best
-        practices, we help institutions deliver impactful vocational
-        education and achieve better student outcomes.
-      </p>
-    </div>
-  </div>
-  </div>
+              <p className="mt-2 max-w-[300px] text-[13px] font-normal leading-[17px] text-[#8A8A8A]">
+                With a strong commitment to quality, innovation, and industry
+                best practices, we help institutions deliver impactful
+                vocational education and achieve better student outcomes.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   );
