@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function ContactPage() {
   return (
     <main className="font-pop">
-      <section className="relative min-h-screen flex h-[420px] w-full items-start justify-center overflow-hidden sm:h-[480px]">
+      <section className="relative min-h-screen fle x h-[420px] w-full items-start justify-center overflow-hidden sm:h-[480px]">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/images/contactbg.png')" }}
