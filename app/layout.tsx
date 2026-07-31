@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
+import Navbar from "@/components/layout/Navbar";
+import ConditionalFooter from "@/components/layout/ConditionalFooter";
 import "./globals.css";
-import Navbar from "../components/layout/Navbar";
-import Footer from "../components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "Indigo Polytechnic",
-  description:
-    "Empowering students through quality education and practical learning.",
+  description: "Empowering students through quality education and practical learning.",
 };
 
 export default function RootLayout({
@@ -18,10 +17,8 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar />
-
         {children}
-
-        <Footer />
+        <ConditionalFooter />
       </body>
     </html>
   );
