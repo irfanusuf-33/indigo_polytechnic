@@ -21,12 +21,12 @@ export default function Home() {
 
   const courses = [
     {
-      tag: "TRADE COURSES",
-      title: "CPC30620 | Certificate III in Painting and Decorating",
+      tag: "CIVIL ENGINEERING",
+      title: "RII60520 | Advance Diploma of Cival Construction Design",
       image: "/images/civalDesign.png",
       rating: 4.5,
       reviews: 137,
-      duration: "60 weeks",
+      duration: "104 weeks",
     },
     {
       tag: "PROJECT MANAGEMENT COURSES",
