@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function StudentProspectusPage() {
   return (
     <main className="font-pop">
-      <section className="relative min-h-screen flex h-[420px] w-full items-start justify-center overflow-hidden sm:h-[480px]">
+      <section className="relative flex h-[480px] w-full items-center justify-center overflow-hidden sm:h-[480px] lg:min-h-screen lg:h-auto lg:items-start">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/images/studentprospectbg.png')" }}
@@ -14,13 +14,13 @@ export default function StudentProspectusPage() {
 
         <div className="absolute inset-0 bg-black/40" />
 
-        <div className="relative z-10 flex flex-col items-center px-6 text-center mt-48">
+        <div className="relative z-10 flex flex-col items-center px-6 text-center lg:mt-48">
           <span className="font-pop mb-5 flex items-center gap-2 rounded-full bg-[#09049B] px-4 py-1.5 text-xs font-semibold uppercase italic tracking-wide text-white">
             <span className=" text-pop h-1.5 w-1.5 rounded-full bg-white" />
             Student Essentials{" "}
           </span>
 
-          <h1 className=" font-pop text-3xl font-bold text-white sm:text-5xl">
+          <h1 className=" font-pop text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
             Plan Your <span className="text-pop text-[#3B82F6]">Future</span>{" "}
             with Confidence
           </h1>
@@ -88,7 +88,6 @@ export default function StudentProspectusPage() {
                 </p>
               </div>
             </div>
-
             <a
               href="/files/fee-and-intake.pdf"
               download

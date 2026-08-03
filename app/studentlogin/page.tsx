@@ -1,12 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <main className="flex h-[calc(100vh-5rem)] overflow-hidden font-pop">
+    <main className="relative flex h-[calc(100vh-5rem)] overflow-hidden font-pop">
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-30 lg:hidden"
+        style={{ backgroundImage: "url('/images/loginBg.png')" }}
+      />
+
       <div className="relative hidden w-1/2 lg:block">
         <div
           className="absolute inset-0  bg-cover bg-center"
@@ -14,57 +20,43 @@ export default function LoginPage() {
         />
       </div>
 
-      <div className="flex w-full items-start justify-center overflow-y-auto px-6 py-8 lg:w-1/2 ">
+      <div className="relative flex flex-1 items-start justify-center overflow-y-auto px-6 py-8  w-1/2">
         <div className="w-full max-w-sm mt-20">
           <h1 className="text-center text-3xl font-bold text-[#000000] font-pop">
-            Welcome back!
+            Welcome <span className="text-[#0C06DA]">Back!</span>
           </h1>
-          <p className="mt-2 text-center text-sm text-[#8A8A8A] font-pop">
+          <p className="mx-auto mt-2  text-center text-sm text-[#545454] font-pop ">
             Log in to continue your journey with Indigo Polytechnic
           </p>
 
           <form className="mt-8 flex flex-col gap-5">
-            <div className="flex items-center gap-3 border-b border-zinc-200 pb-3 focus-within:border-[#0C06DA]">
-              <svg
-                className="h-5 w-5 shrink-0 text-[#0C06DA]"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={1.8}
-              >
-                <rect x="3" y="5" width="18" height="14" rx="2" />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3 7l9 6 9-6"
-                />
-              </svg>
+            <div className="flex items-center gap-3 border-b border-zinc-[#5A5A5A] pb-3 focus-within:border-[#0C06DA] lg:border-zinc-200">
+              <Image
+                src="/images/email.png"
+                alt="Student ID"
+                width={20}
+                height={20}
+                className="shrink-0 object-contain"
+              />
               <input
                 type="text"
                 placeholder="Student ID"
-                className="w-full bg-transparent text-[13px] text-[#000000] outline-none placeholder:text-[#8A8A8A]"
+                className="w-full bg-transparent lg:text-[13px] text-[16px]  text-[#000000] outline-none placeholder:text-[#545454] lg:placeholder:text-[#8A8A8A] font-pop "
               />
             </div>
 
-            <div className=" mt-3 flex items-center gap-3 border-b border-zinc-200 pb-3 focus-within:border-[#0C06DA]">
-              <svg
-                className="h-5 w-5 shrink-0 text-[#0C06DA]"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={1.8}
-              >
-                <rect x="5" y="10" width="14" height="10" rx="2" />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8 10V7a4 4 0 118 0v3"
-                />
-              </svg>
+            <div className="mt-3 flex items-center gap-3 border-b border-zinc-[#5A5A5A] pb-3 focus-within:border-[#0C06DA] lg:border-zinc-200">
+              <Image
+                src="/images/password.png"
+                alt="Student ID"
+                width={20}
+                height={20}
+                className="shrink-0 object-contain"
+              />
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Password"
-                className="w-full bg-transparent text-[13px]  text-[#000000] outline-none placeholder:text-[#8A8A8A] font-pop"
+                className="w-full bg-transparent lg:text-[13px] text-[16px]  text-[#000000] outline-none  placeholder:text-[#545454] lg:placeholder:text-[#8A8A8A] font-pop"
               />
               <button
                 type="button"
@@ -108,16 +100,16 @@ export default function LoginPage() {
             </div>
 
             <div className="flex items-center justify-between text-sm mt-3">
-              <label className="flex items-center gap-2 text-[#8A8A8A] text-xs font-pop">
+              <label className="flex items-center gap-2 lg:text-[#8A8A8A] text-sm font-pop lg:text-xs">
                 <input
                   type="checkbox"
-                  className="h-4 w-4 text-xs rounded border-zinc-300 accent-[#0C06DA] font-pop"
+                  className="h-6 w-6 rounded border-zinc-300 accent-[#0C06DA] lg:h-4 lg:w-4"
                 />
                 Remember me
               </label>
               <a
                 href="#"
-                className="text-[#8A8A8A] text-xs transition hover:text-[#0C06DA] font-pop"
+                className="text-[#0C06DA] font-semibold text-sm lg:text-xs transition hover:text-[#0C06DA] font-pop"
               >
                 Forgot Password?
               </a>
