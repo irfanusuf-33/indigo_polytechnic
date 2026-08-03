@@ -205,7 +205,8 @@ const Navbar = () => {
               className={`relative flex items-center gap-2 text-sm font-medium transition-colors ${
                 pathname.startsWith("/applicationform") ||
                 pathname.startsWith("/studentprospectus") ||
-                pathname.startsWith("/admissions")
+                pathname.startsWith("/admissions") ||
+                pathname.startsWith("/generalforms")
                   ? activeLink
                   : inactiveLink
               }`}
@@ -248,7 +249,7 @@ const Navbar = () => {
                     </Link>
 
                     <Link
-                      href="/admissions/forms"
+                      href="/generalforms"
                       className="rounded-lg pt-1 pb-2  text-sm text-[#545454] transition hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
                     >
                       Forms
