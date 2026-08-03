@@ -1,27 +1,22 @@
 "use client";
 
-
 export default function ContactPage() {
   return (
     <main className="font-pop">
-      <section className="relative min-h-screen flex h-[420px] w-full items-start justify-center overflow-hidden sm:h-[480px]">
+      <section className="relative flex h-[480px] w-full items-center justify-center overflow-hidden sm:h-[480px] lg:min-h-screen lg:h-auto lg:items-start">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/images/contactbg.png')" }}
         />
-
         <div className="absolute inset-0 bg-black/40" />
-
-        <div className="relative z-10 flex flex-col items-center px-6 text-center mt-48">
+        <div className="relative z-10 flex flex-col items-center px-6 text-center lg:mt-48">
           <span className="mb-5 flex items-center gap-2 rounded-full bg-[#09049B] px-4 py-1.5 text-xs font-semibold uppercase italic tracking-wide text-white">
             <span className="h-1.5 w-1.5 rounded-full bg-white" />
             Contact Us
           </span>
-
-          <h1 className="text-3xl font-bold text-white sm:text-5xl">
+          <h1 className="text-2xl font-bold text-white sm:text-4xl lg:text-5xl">
             Lets <span className="text-[#3B82F6]">Talk</span> About Your Future
           </h1>
-
           <p className="mt-4 max-w-xl text-sm text-white/90 sm:text-base">
             Whether you have questions about our programs, admissions, or
             student support, our team is ready to provide the guidance you need.
@@ -29,19 +24,16 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="px-6 py-20">
-        <div className="mx-auto max-w-5xl border-8 border-[#E7E6FB] bg-white p-8 sm:p-10">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-            {/* Left Column */}
+      <section className="px-4 py-12 sm:px-6 sm:py-20">
+        <div className="mx-auto max-w-5xl border-4 border-[#E7E6FB] bg-white p-5 sm:border-8 sm:p-8 lg:p-10">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-12">
             <div>
-              {/* Label */}
               <span className="mb-5 flex w-fit items-center gap-2 rounded-full bg-[#09049B] px-4 py-1.5 font-pop text-xs font-semibold uppercase italic tracking-wide text-white">
                 <span className="h-1.5 w-1.5 rounded-full bg-white" />
                 Get in Touch
               </span>
 
-              {/* Heading */}
-              <h2 className="font-pop text-2xl font-bold leading-tight text-[#000000] sm:text-3xl">
+              <h2 className="font-pop text-xl font-bold leading-tight text-[#000000] sm:text-2xl lg:text-3xl">
                 Let&apos;s{" "}
                 <span className="font-pop text-[#0C06DA]">Start</span> the
                 Conversation
@@ -53,7 +45,7 @@ export default function ContactPage() {
               </p>
 
               <div className="mt-8 flex flex-col gap-4">
-                <div className="flex w-[350px] items-center gap-4 rounded-xl bg-[#EEF0FC] px-5 py-4">
+                <div className="flex w-full items-center gap-4 rounded-xl bg-[#EEF0FC] px-5 py-4 sm:max-w-[350px]">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-[#0C06DA]">
                     <svg
                       className="h-5 w-5"
@@ -79,7 +71,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="flex w-[350px] items-center gap-4 rounded-xl bg-[#EEF0FC] px-5 py-4">
+                <div className="flex w-full items-center gap-4 rounded-xl bg-[#EEF0FC] px-5 py-4 sm:max-w-[350px]">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-[#0C06DA]">
                     <svg
                       className="h-5 w-5"
@@ -101,13 +93,13 @@ export default function ContactPage() {
                     <h3 className="text-sm font-semibold text-[#000000]">
                       Email Us
                     </h3>
-                    <p className="text-sm text-[#8A8A8A]">
+                    <p className="break-all text-sm text-[#8A8A8A]">
                       contact@indigopoly.com
                     </p>
                   </div>
                 </div>
 
-                <div className="flex w-[350px] items-center gap-4 rounded-xl bg-[#EEF0FC] px-5 py-4">
+                <div className="flex w-full items-center gap-4 rounded-xl bg-[#EEF0FC] px-5 py-4 sm:max-w-[350px]">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-[#0C06DA]">
                     <svg
                       className="h-5 w-5"
@@ -137,64 +129,64 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <h3 className="mb-6 text-lg font-semibold text-[#09049B] font-pop">
+              <h3 className="mb-6 font-pop text-base font-semibold text-[#09049B] sm:text-lg">
                 Drop us a message
               </h3>
 
               <form className="flex flex-col gap-5">
                 <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                   <div>
-                    <label className="mb-1.5 block text-sm font-medium text-[#000000] font-pop ">
+                    <label className="mb-1.5 block font-pop text-sm font-medium text-[#000000]">
                       Name
                     </label>
 
                     <input
                       type="text"
                       placeholder="Your Name"
-                      className="w-full rounded-lg border border-zinc-200 px-3 py-2.5 text-xs text-[#000000] outline-none placeholder:text-[#8A8A8A] focus:border-[#0C06DA] font-pop "
+                      className="w-full rounded-lg border border-zinc-200 px-3 py-2.5 font-pop text-sm text-[#000000] outline-none placeholder:text-[#8A8A8A] focus:border-[#0C06DA]"
                     />
                   </div>
 
                   <div>
-                    <label className="mb-1.5 block text-sm font-medium text-[#000000] font-pop ">
+                    <label className="mb-1.5 block font-pop text-sm font-medium text-[#000000]">
                       Email
                     </label>
 
                     <input
                       type="email"
                       placeholder="Your Email"
-                      className="w-full rounded-lg border border-zinc-200 px-3 py-2.5 text-xs text-[#000000] outline-none placeholder:text-[#8A8A8A] focus:border-[#0C06DA] font-pop  "
+                      className="w-full rounded-lg border border-zinc-200 px-3 py-2.5 font-pop text-sm text-[#000000] outline-none placeholder:text-[#8A8A8A] focus:border-[#0C06DA]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="mb-1.5 block text-sm font-medium text-[#000000] font-pop ">
+                  <label className="mb-1.5 block font-pop text-sm font-medium text-[#000000]">
                     Phone
                   </label>
 
                   <input
                     type="text"
                     placeholder="Subject"
-                    className="w-full rounded-lg border border-zinc-200 px-3 py-2.5 text-xs text-[#000000] outline-none placeholder:text-[#8A8A8A] focus:border-[#0C06DA] font-pop "
+                    className="w-full rounded-lg border border-zinc-200 px-3 py-2.5 font-pop text-sm text-[#000000] outline-none placeholder:text-[#8A8A8A] focus:border-[#0C06DA]"
                   />
                 </div>
 
                 <div>
-                  <label className="mb-1.5 block text-sm font-medium text-[#000000] font-pop ">
+                  <label className="mb-1.5 block font-pop text-sm font-medium text-[#000000]">
                     Message
                   </label>
 
                   <textarea
                     placeholder="Enter Your Message Here"
                     rows={4}
-                    className="w-full resize-none rounded-lg border border-zinc-200 px-3 pt-2.5 pb-7 text-xs text-[#000000] outline-none placeholder:text-[#8A8A8A] focus:border-[#0C06DA] font-pop "
+                    className="w-full resize-none rounded-lg border border-zinc-200 px-3 pb-7 pt-2.5 font-pop text-sm text-[#000000] outline-none placeholder:text-[#8A8A8A] focus:border-[#0C06DA]"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-fit rounded-lg bg-[#0C06DA] px-6 py-3 text-sm font-normal text-white transition hover:bg-[#0a05b8]font-pop "
+                  className="w-full rounded-lg bg-[#0C06DA] px-6 py-3 font-pop text-sm font-normal text-white transition hover:bg-[#0a05b8] sm:w-fit"
                 >
                   Send Message
                 </button>
