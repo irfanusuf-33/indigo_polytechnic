@@ -11,19 +11,15 @@ const Navbar = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<
-    "courses" | "resources" | null
+    "company" | "courses" | "users" | null
   >(null);
-
-  const handleMenuToggle = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
 
   const closeMenu = () => {
     setIsMenuOpen(false);
     setOpenDropdown(null);
   };
 
-  const toggleDropdown = (dropdown: "courses" | "resources") => {
+  const toggleDropdown = (dropdown: "company" | "courses" | "users") => {
     setOpenDropdown((prev) => (prev === dropdown ? null : dropdown));
   };
 
@@ -35,7 +31,7 @@ const Navbar = () => {
   return (
     <nav className="relative z-50 bg-white shadow-sm">
       <div className="mx-auto flex h-20 max-w-[96%] items-center px-2.5 lg:max-w-[92%] lg:px-6">
-        <div className="flex w-full items-center justify-between px-0 lg:hidden">
+        <div className="flex w-full items-center justify-between lg:hidden">
           <Link href="/" onClick={closeMenu}>
             <Image
               src={logo}
@@ -49,10 +45,8 @@ const Navbar = () => {
 
           <button
             type="button"
-            onClick={handleMenuToggle}
-            aria-label={
-              isMenuOpen ? "Close navigation menu" : "Open navigation menu"
-            }
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMenuOpen}
             className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#EAEAEA] text-[#0C06DA] transition-colors hover:bg-[#E5F2F0]"
           >
@@ -124,7 +118,7 @@ const Navbar = () => {
               <span className="mt-[1px] h-1.5 w-1.5 rotate-45 border-b border-r border-current transition-transform duration-200 group-hover:-rotate-[135deg]" />
             </button>
 
-            <div className="invisible absolute right-0 top-full z-50 mt-6 w-56 translate-y-2 rounded-xl border border-gray-100 bg-white p-2  shadow-lg transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+            <div className="invisible absolute right-0 top-full z-50 mt-6 w-56 translate-y-2 rounded-xl border border-gray-100 bg-white p-2 opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
               <Link
                 href="/about"
                 className="block rounded-lg px-4 py-3 text-sm text-[#545454] hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
@@ -155,25 +149,16 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* <Link
-            href="/about"
-            className={`relative text-sm font-medium transition-colors ${
-              pathname === "/about" ? activeLink : inactiveLink
-            }`}
-          >
-            About
-          </Link> */}
-
           <div className="group relative">
-            <Link
-              href="/courses"
+            <button
+              type="button"
               className={`relative flex items-center gap-2 text-sm font-medium transition-colors ${
                 pathname.startsWith("/courses") ? activeLink : inactiveLink
               }`}
             >
               Courses
               <span className="mt-[1px] h-1.5 w-1.5 rotate-45 border-b border-r border-current transition-transform duration-200 group-hover:-rotate-[135deg]" />
-            </Link>
+            </button>
 
             <div className="invisible absolute left-1/2 top-full z-50 mt-6 w-56 -translate-x-1/2 translate-y-2 rounded-xl border border-gray-100 bg-white p-2 opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
               <Link
@@ -213,49 +198,53 @@ const Navbar = () => {
               For Users
               <span className="mt-[1px] h-1.5 w-1.5 rotate-45 border-b border-r border-current transition-transform duration-200 group-hover:-rotate-[135deg]" />
             </button>
+
             <div className="invisible absolute left-0 top-full z-50 mt-6 w-[410px] translate-y-2 rounded-xl border border-gray-100 bg-white p-6 opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
               <div className="grid grid-cols-2 gap-x-10 gap-y-2">
                 <div>
                   <h3 className="mb-3 text-sm font-semibold text-[#000000]">
                     Students
                   </h3>
+
                   <div className="flex flex-col gap-1">
                     <Link
                       href="/applicationform"
-                      className="rounded-lg  py-2 text-sm text-[#545454] transition hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
+                      className="rounded-lg py-2 text-sm text-[#545454] transition hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
                     >
                       Student Application Form
                     </Link>
 
                     <Link
                       href="/studentprospectus"
-                      className="rounded-lg pt-1 pb-2 text-sm text-[#545454] transition hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
+                      className="rounded-lg py-2 text-sm text-[#545454] transition hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
                     >
                       Student Prospectus
                     </Link>
 
                     <Link
                       href="/studentprospectus"
-                      className="rounded-lg pt-1 pb-2 text-sm text-[#545454] transition hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
+                      className="rounded-lg py-2 text-sm text-[#545454] transition hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
                     >
                       Fees and Intakes
                     </Link>
+
                     <Link
                       href="/admissions/student-support"
-                      className="rounded-lg pt-1 pb-2 text-sm text-[#545454] transition hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
+                      className="rounded-lg py-2 text-sm text-[#545454] transition hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
                     >
                       Student Support
                     </Link>
 
                     <Link
-                      href="/admissions/forms"
-                      className="rounded-lg pt-1 pb-2  text-sm text-[#545454] transition hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
+                      href="/generalforms"
+                      className="rounded-lg py-2 text-sm text-[#545454] transition hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
                     >
                       Forms
                     </Link>
+
                     <Link
                       href="/admissions/usi"
-                      className="rounded-lg pt-1 pb-2  text-sm text-[#545454] transition hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
+                      className="rounded-lg py-2 text-sm text-[#545454] transition hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
                     >
                       USI
                     </Link>
@@ -266,16 +255,18 @@ const Navbar = () => {
                   <h3 className="mb-3 text-sm font-semibold text-[#000000]">
                     Agents
                   </h3>
+
                   <div className="flex flex-col gap-1">
                     <Link
                       href="/admissions/agent-application"
-                      className="rounded-lg pt-2 pb-2  text-sm text-[#545454] transition hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
+                      className="rounded-lg py-2 text-sm text-[#545454] transition hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
                     >
                       Agent Application Form
                     </Link>
+
                     <Link
                       href="/admissions/agent-list"
-                      className="rounded-lg   text-sm text-[#545454] transition hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
+                      className="rounded-lg py-2 text-sm text-[#545454] transition hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
                     >
                       Agent List
                     </Link>
@@ -306,9 +297,9 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`lg:hidden overflow-hidden border-t border-gray-100 bg-white shadow-lg transition-all duration-300 ${
+        className={`overflow-hidden border-t border-gray-100 bg-white shadow-lg transition-all duration-300 lg:hidden ${
           isMenuOpen
-            ? "max-h-[1000px] opacity-100"
+            ? "max-h-[1500px] opacity-100"
             : "pointer-events-none max-h-0 opacity-0"
         }`}
       >
@@ -324,15 +315,81 @@ const Navbar = () => {
               Home
             </Link>
 
-            <Link
-              href="/about"
-              onClick={closeMenu}
-              className={`border-b border-gray-100 py-4 text-sm font-medium ${
-                pathname === "/about" ? "text-[#0C06DA]" : "text-[#545454]"
-              }`}
-            >
-              About
-            </Link>
+            <div className="border-b border-gray-100">
+              <button
+                type="button"
+                onClick={() => toggleDropdown("company")}
+                className={`flex w-full items-center justify-between py-4 text-left text-sm font-medium ${
+                  pathname.startsWith("/about") ||
+                  pathname.startsWith("/company") ||
+                  pathname.startsWith("/admissions/requirements")
+                    ? "text-[#0C06DA]"
+                    : "text-[#545454]"
+                }`}
+              >
+                <span>Company</span>
+
+                <svg
+                  className={`h-5 w-5 transition-transform duration-300 ${
+                    openDropdown === "company" ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 9l6 6 6-6"
+                  />
+                </svg>
+              </button>
+
+              <div
+                className={`grid transition-all duration-300 ${
+                  openDropdown === "company"
+                    ? "grid-rows-[1fr] pb-3 opacity-100"
+                    : "grid-rows-[0fr] opacity-0"
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <div className="space-y-1 rounded-lg bg-[#F8FAFA] p-2">
+                    <Link
+                      href="/about"
+                      onClick={closeMenu}
+                      className="block rounded-lg px-4 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
+                    >
+                      About Us
+                    </Link>
+
+                    <Link
+                      href="/about"
+                      onClick={closeMenu}
+                      className="block rounded-lg px-4 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
+                    >
+                      Why Indigo Polytechnic
+                    </Link>
+
+                    <Link
+                      href="/admissions/requirements"
+                      onClick={closeMenu}
+                      className="block rounded-lg px-4 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
+                    >
+                      ESOS Compliance
+                    </Link>
+
+                    <Link
+                      href="/admissions/requirements"
+                      onClick={closeMenu}
+                      className="block rounded-lg px-4 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
+                    >
+                      Tasmania Life
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <div className="border-b border-gray-100">
               <button
@@ -403,18 +460,21 @@ const Navbar = () => {
             <div className="border-b border-gray-100">
               <button
                 type="button"
-                onClick={() => toggleDropdown("resources")}
+                onClick={() => toggleDropdown("users")}
                 className={`flex w-full items-center justify-between py-4 text-left text-sm font-medium ${
-                  pathname.startsWith("/admissions")
+                  pathname.startsWith("/applicationform") ||
+                  pathname.startsWith("/studentprospectus") ||
+                  pathname.startsWith("/admissions") ||
+                  pathname.startsWith("/generalforms")
                     ? "text-[#0C06DA]"
                     : "text-[#545454]"
                 }`}
               >
-                <span>Student Resources</span>
+                <span>For Users</span>
 
                 <svg
                   className={`h-5 w-5 transition-transform duration-300 ${
-                    openDropdown === "resources" ? "rotate-180" : ""
+                    openDropdown === "users" ? "rotate-180" : ""
                   }`}
                   fill="none"
                   viewBox="0 0 24 24"
@@ -431,28 +491,94 @@ const Navbar = () => {
 
               <div
                 className={`grid transition-all duration-300 ${
-                  openDropdown === "resources"
+                  openDropdown === "users"
                     ? "grid-rows-[1fr] pb-3 opacity-100"
                     : "grid-rows-[0fr] opacity-0"
                 }`}
               >
                 <div className="overflow-hidden">
-                  <div className="space-y-1 rounded-lg bg-[#F8FAFA] p-2">
-                    <Link
-                      href="/admissions/apply"
-                      onClick={closeMenu}
-                      className="block rounded-lg px-4 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
-                    >
-                      Apply Now
-                    </Link>
+                  <div className="rounded-lg bg-[#F8FAFA] p-3">
+                    <div className="grid grid-cols-1 gap-5">
+                      <div>
+                        <h3 className="mb-2 px-2 text-sm font-semibold text-[#000000]">
+                          Students
+                        </h3>
 
-                    <Link
-                      href="/admissions/requirements"
-                      onClick={closeMenu}
-                      className="block rounded-lg px-4 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
-                    >
-                      Admission Requirements
-                    </Link>
+                        <div className="space-y-1">
+                          <Link
+                            href="/applicationform"
+                            onClick={closeMenu}
+                            className="block rounded-lg px-2 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
+                          >
+                            Student Application Form
+                          </Link>
+
+                          <Link
+                            href="/studentprospectus"
+                            onClick={closeMenu}
+                            className="block rounded-lg px-2 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
+                          >
+                            Student Prospectus
+                          </Link>
+
+                          <Link
+                            href="/studentprospectus"
+                            onClick={closeMenu}
+                            className="block rounded-lg px-2 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
+                          >
+                            Fees and Intakes
+                          </Link>
+
+                          <Link
+                            href="/admissions/student-support"
+                            onClick={closeMenu}
+                            className="block rounded-lg px-2 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
+                          >
+                            Student Support
+                          </Link>
+
+                          <Link
+                            href="/generalforms"
+                            onClick={closeMenu}
+                            className="block rounded-lg px-2 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
+                          >
+                            Forms
+                          </Link>
+
+                          <Link
+                            href="/admissions/usi"
+                            onClick={closeMenu}
+                            className="block rounded-lg px-2 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
+                          >
+                            USI
+                          </Link>
+                        </div>
+                      </div>
+
+                      <div className="border-t border-gray-200 pt-4">
+                        <h3 className="mb-2 px-2 text-sm font-semibold text-[#000000]">
+                          Agents
+                        </h3>
+
+                        <div className="space-y-1">
+                          <Link
+                            href="/admissions/agent-application"
+                            onClick={closeMenu}
+                            className="block rounded-lg px-2 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
+                          >
+                            Agent Application Form
+                          </Link>
+
+                          <Link
+                            href="/admissions/agent-list"
+                            onClick={closeMenu}
+                            className="block rounded-lg px-2 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
+                          >
+                            Agent List
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
