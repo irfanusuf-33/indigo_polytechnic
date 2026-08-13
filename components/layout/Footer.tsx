@@ -113,7 +113,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="/prospectus"
+                  href="/studentprospectus"
                   className="text-sm text-[#8A8A8A] transition hover:text-[#0C06DA]"
                 >
                   Student Prospectus
@@ -122,7 +122,7 @@ const Footer = () => {
 
               <li>
                 <Link
-                  href="/application"
+                  href="/applicationform"
                   className="text-sm text-[#8A8A8A] transition hover:text-[#0C06DA]"
                 >
                   Application Form
@@ -131,7 +131,7 @@ const Footer = () => {
 
               <li>
                 <Link
-                  href="/fees"
+                  href="/studentprospectus"
                   className="text-sm text-[#8A8A8A] transition hover:text-[#0C06DA]"
                 >
                   Fees & Intake

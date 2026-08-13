@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 
 export default function AboutPage() {
@@ -85,18 +86,21 @@ export default function AboutPage() {
                 Career Pathway Support
               </li>
             </ul>
-            <button className="mt-8 flex w-full items-center justify-center gap-5 rounded-full bg-[#0C06DA] py-1.5 pl-4 pr-4 text-[16px] font-normal text-white transition hover:bg-[#0a05b8] sm:w-fit sm:justify-start">
+            <Link
+              href="/applicationform"
+              className="mt-8 flex w-full items-center justify-center gap-5 rounded-full bg-[#0C06DA] py-1.5 pl-4 pr-4 text-[16px] font-normal text-white transition hover:bg-[#0a05b8] sm:w-fit sm:justify-start"
+            >
               Get Started
               <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white">
                 <Image
-                  src="/images/arrow.png"
+                  src="/images/Union.svg"
                   alt="Arrow"
                   width={14}
                   height={14}
                   className="object-contain"
                 />
               </span>
-            </button>
+            </Link>
           </div>
         </div>
       </section>

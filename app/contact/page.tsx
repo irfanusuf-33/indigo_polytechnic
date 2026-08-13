@@ -69,7 +69,7 @@ export default function ContactPage() {
                     <h3 className="text-sm font-semibold text-[#000000]">
                       Visit Campus
                     </h3>
-                    <p className="text-sm text-[#8A8A8A]">Hobart</p>
+                    <p className="text-sm text-[#8A8A8A]">Hobart Campus</p>
                   </div>
                 </div>
 
@@ -96,7 +96,7 @@ export default function ContactPage() {
                       Email Us
                     </h3>
                     <p className="break-all text-sm text-[#8A8A8A]">
-                      contact@indigopoly.com
+                      info@ip.edu.au
                     </p>
                   </div>
                 </div>
@@ -122,9 +122,7 @@ export default function ContactPage() {
                     <h3 className="text-sm font-semibold text-[#000000]">
                       Call Us
                     </h3>
-                    <p className="text-sm text-[#8A8A8A]">
-                      +91 2436373635636636
-                    </p>
+                    <p className="text-sm text-[#8A8A8A]">03 6159 6209</p>
                   </div>
                 </div>
               </div>
