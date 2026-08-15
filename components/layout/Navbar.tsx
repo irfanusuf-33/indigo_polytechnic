@@ -134,14 +134,14 @@ const Navbar = () => {
               </Link>
 
               <Link
-                href="/admissions/requirements"
+                href="/esos"
                 className="block rounded-lg px-4 py-3 text-sm text-[#545454] hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
               >
                 ESOS Compliance
               </Link>
 
               <Link
-                href="/admissions/requirements"
+                href="/tasmania"
                 className="block rounded-lg px-4 py-3 text-sm text-[#545454] hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
               >
                 Tasmania Life
@@ -243,7 +243,7 @@ const Navbar = () => {
                     </Link>
 
                     <Link
-                      href="/admissions/usi"
+                      href="/USI"
                       className="rounded-lg py-2 text-sm text-[#545454] transition hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
                     >
                       USI
