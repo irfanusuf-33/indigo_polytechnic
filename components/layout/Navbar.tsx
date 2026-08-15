@@ -127,7 +127,7 @@ const Navbar = () => {
               </Link>
 
               <Link
-                href="/about"
+                href="/whyindigo"
                 className="block rounded-lg px-4 py-3 text-sm text-[#545454] hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
               >
                 Why Indigo Polytechnic
@@ -150,15 +150,15 @@ const Navbar = () => {
           </div>
 
           <div className="group relative">
-            <button
-              type="button"
+            <Link
+              href="/courses"
               className={`relative flex items-center gap-2 text-sm font-medium transition-colors ${
                 pathname.startsWith("/courses") ? activeLink : inactiveLink
               }`}
             >
               Courses
               <span className="mt-[1px] h-1.5 w-1.5 rotate-45 border-b border-r border-current transition-transform duration-200 group-hover:-rotate-[135deg]" />
-            </button>
+            </Link>
 
             <div className="invisible absolute left-1/2 top-full z-50 mt-6 w-56 -translate-x-1/2 translate-y-2 rounded-xl border border-gray-100 bg-white p-2 opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
               <Link
@@ -287,12 +287,21 @@ const Navbar = () => {
         </div>
 
         <div className="hidden flex-1 items-center justify-end lg:flex">
-          <Link
-            href="/studentlogin"
-            className="rounded-lg bg-[#0C06DA] px-8 py-2 font-pop text-sm font-medium text-white transition-colors hover:bg-[#0A05B8]"
-          >
-            Student Login
-          </Link>
+          {pathname === "/studentlogin" ? (
+            <Link
+              href="/contact"
+              className="font-pop text-sm font-medium text-[#0C06DA] underline"
+            >
+              Need Help?
+            </Link>
+          ) : (
+            <Link
+              href="/studentlogin"
+              className="rounded-lg bg-[#0C06DA] px-8 py-2 font-pop text-sm font-medium text-white transition-colors hover:bg-[#0A05B8]"
+            >
+              Student Login
+            </Link>
+          )}
         </div>
       </div>
 
