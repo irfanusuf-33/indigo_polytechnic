@@ -5,6 +5,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import logo from "../../public/images/logo.png";
+import { courses } from "@/data/courses";
+
+const courseCategories = Array.from(
+  new Set(courses.map((course) => course.category)),
+).map((category) => ({
+  category,
+  courses: courses.filter((course) => course.category === category),
+}));
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -160,27 +168,35 @@ const Navbar = () => {
               <span className="mt-[1px] h-1.5 w-1.5 rotate-45 border-b border-r border-current transition-transform duration-200 group-hover:-rotate-[135deg]" />
             </Link>
 
-            <div className="invisible absolute left-1/2 top-full z-50 mt-6 w-56 -translate-x-1/2 translate-y-2 rounded-xl border border-gray-100 bg-white p-2 opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-              <Link
-                href="/courses/vocational"
-                className="block rounded-lg px-4 py-3 text-sm text-[#545454] hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
-              >
-                Business and Management
-              </Link>
+            <div className="invisible absolute left-0 top-full z-50 mt-6 w-[520px] translate-y-2 rounded-xl border border-gray-100 bg-white p-6 opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+              {courseCategories.map(
+                ({ category, courses: categoryCourses }, index) => (
+                  <div
+                    key={category}
+                    className={
+                      index < courseCategories.length - 1
+                        ? "mb-6 border-b border-gray-200 pb-2"
+                        : ""
+                    }
+                  >
+                    <p className="mb-1 text-[15px] font-bold text-[#171717]">
+                      {category}
+                    </p>
 
-              <Link
-                href="/courses/information-technology"
-                className="block rounded-lg px-4 py-3 text-sm text-[#545454] hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
-              >
-                Information Technology
-              </Link>
-
-              <Link
-                href="/courses/civil-engineering"
-                className="block rounded-lg px-4 py-3 text-sm text-[#545454] hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
-              >
-                Civil Engineering
-              </Link>
+                    <div className="flex flex-col gap-1">
+                      {categoryCourses.map((course) => (
+                        <Link
+                          key={course.slug}
+                          href={`/courses/${course.slug}`}
+                          className="whitespace-nowrap text-[14px] text-[#545454] transition hover:text-[#0C06DA]"
+                        >
+                          {course.code} {course.title}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ),
+              )}
             </div>
           </div>
 
@@ -229,7 +245,7 @@ const Navbar = () => {
                     </Link>
 
                     <Link
-                      href="/admissions/student-support"
+                      href="/studentsupport"
                       className="rounded-lg py-2 text-sm text-[#545454] transition hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
                     >
                       Student Support
@@ -258,14 +274,14 @@ const Navbar = () => {
 
                   <div className="flex flex-col gap-1">
                     <Link
-                      href="/admissions/agent-application"
+                      href="/agentapplicationform"
                       className="rounded-lg py-2 text-sm text-[#545454] transition hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
                     >
                       Agent Application Form
                     </Link>
 
                     <Link
-                      href="/admissions/agent-list"
+                      href="/agentlist"
                       className="rounded-lg py-2 text-sm text-[#545454] transition hover:bg-[#F1F8F7] hover:text-[#0C06DA]"
                     >
                       Agent List
@@ -539,7 +555,7 @@ const Navbar = () => {
                           </Link>
 
                           <Link
-                            href="/admissions/student-support"
+                            href="/studentsupport"
                             onClick={closeMenu}
                             className="block rounded-lg px-2 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
                           >

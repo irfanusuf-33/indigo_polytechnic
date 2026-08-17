@@ -140,7 +140,7 @@ const Footer = () => {
 
               <li>
                 <Link
-                  href="/forms"
+                  href="/generalforms"
                   className="text-sm text-[#8A8A8A] transition hover:text-[#0C06DA]"
                 >
                   Forms
@@ -149,7 +149,7 @@ const Footer = () => {
 
               <li>
                 <Link
-                  href="/policies"
+                  href="/policy&procedures"
                   className="text-sm text-[#8A8A8A] transition hover:text-[#0C06DA]"
                 >
                   Policy & Procedures
@@ -166,7 +166,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="/courses/business-management"
+                  href="/courses/bsb50420-diploma-of-leadership-and-management"
                   className="text-sm text-[#8A8A8A] transition hover:text-[#0C06DA]"
                 >
                   BSB50420 Diploma of Leadership and Management
@@ -175,7 +175,7 @@ const Footer = () => {
 
               <li>
                 <Link
-                  href="/courses/graduate-diploma-management"
+                  href="/courses/bsb80120-graduate-diploma-of-management-learning"
                   className="text-sm text-[#8A8A8A] transition hover:text-[#0C06DA]"
                 >
                   BSB80120 Graduate Diploma of Management (Learning)
@@ -184,16 +184,16 @@ const Footer = () => {
 
               <li>
                 <Link
-                  href="/courses/information-technology"
+                  href="/courses/ict60220-advanced-diploma-of-information-technology"
                   className="text-sm text-[#8A8A8A] transition hover:text-[#0C06DA]"
                 >
-                  ICT50220 Advanced Diploma of Information Technology
+                  ICT60220 Advanced Diploma of Information Technology
                 </Link>
               </li>
 
               <li>
                 <Link
-                  href="/courses/civil-engineering"
+                  href="/courses/rii60520-advanced-diploma-of-civil-construction-design"
                   className="text-sm text-[#8A8A8A] transition hover:text-[#0C06DA]"
                 >
                   RII60520 Advanced Diploma of Civil Construction Design

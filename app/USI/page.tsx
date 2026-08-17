@@ -46,7 +46,6 @@ const featureCards: FeatureCard[] = [
 export default function UsiPage() {
   return (
     <main className="overflow-x-hidden font-pop">
-      {/* Hero */}
       <section className="relative flex min-h-[658px] items-center justify-center overflow-hidden px-6 py-20 text-center">
         <Image
           src="/images/usi-bg.svg"
@@ -73,7 +72,6 @@ export default function UsiPage() {
         </div>
       </section>
 
-      {/* Everything You Need to Know About Your USI */}
       <section className="bg-[#E7E6FB] mt-25 px-6 py-16 sm:px-10 lg:py-20">
         <div className="mx-auto max-w-[1400px]">
           <h2 className="text-[32px] font-bold leading-tight text-[#171717] sm:text-[38px]">
@@ -110,7 +108,6 @@ export default function UsiPage() {
         </div>
       </section>
 
-      {/* A Digital Record of Your Learning Journey */}
       <section className="py-20 lg:py-24">
         <div className="mx-auto max-w-[1400px] px-6 text-center lg:px-8">
           <SectionLabel>Understanding Your USI</SectionLabel>
@@ -126,7 +123,6 @@ export default function UsiPage() {
           </p>
 
           <div className="mt-14 grid grid-cols-1 gap-6 text-left lg:grid-cols-[357px_1fr]">
-            {/* Left column */}
             <div>
               <div className="flex h-[91px] w-[357px] items-center justify-center rounded-lg bg-[#09049B] px-6 text-center">
                 <p className="text-[14px] font-bold leading-6 text-white">
@@ -146,7 +142,6 @@ export default function UsiPage() {
               </div>
             </div>
 
-            {/* Right column */}
             <div className="flex flex-col gap-10">
               {featureCards.map((card) => (
                 <div

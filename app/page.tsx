@@ -29,6 +29,7 @@ export default function Home() {
       rating: 4.5,
       reviews: 137,
       duration: "104 weeks",
+      slug: "rii60520-advanced-diploma-of-civil-construction-design",
     },
     {
       tag: "BUSINESS and MANAGEMENT",
@@ -37,6 +38,7 @@ export default function Home() {
       rating: 4.0,
       reviews: 237,
       duration: "52 weeks",
+      slug: "bsb80120-graduate-diploma-of-management-learning",
     },
   ];
   const steps = [
@@ -60,12 +62,12 @@ export default function Home() {
       flex: "flex-[0.9]",
     },
     {
-      src: "/images/campus-building.png",
+      src: "/images/campus-building.svg",
       alt: "Campus building exterior",
       flex: "flex-[0.9]",
     },
     {
-      src: "/images/meeting-room.png",
+      src: "/images/meeting-room.svg",
       alt: "Students in a meeting room",
       flex: "flex-[1.2]",
     },
@@ -73,17 +75,17 @@ export default function Home() {
 
   const bottomRow = [
     {
-      src: "/images/soccer.png",
+      src: "/images/soccor.svg",
       alt: "Student playing soccer",
       flex: "flex-[0.75]",
     },
     {
-      src: "/images/career-symposium.png",
+      src: "/images/career-symposium.svg",
       alt: "College career symposium",
       flex: "flex-[0.95]",
     },
     {
-      src: "/images/lecture-hall.png",
+      src: "/images/lecture-hall.svg",
       alt: "Student studying in lecture hall",
       flex: "flex-[1.15]",
     },
@@ -277,16 +279,19 @@ export default function Home() {
                       </span>
                     </div>
 
-                    <button className="mt-auto flex items-center justify-center gap-2 rounded-lg bg-[#0C06DA] py-2.5 text-sm font-normal text-white transition hover:bg-[#0a05b8]">
+                    <Link
+                      href={`/courses/${course.slug}`}
+                      className="mt-auto flex items-center justify-center gap-2 rounded-lg bg-[#0C06DA] py-2.5 text-sm font-normal text-white transition hover:bg-[#0a05b8]"
+                    >
                       Explore
                       <Image
                         src="/images/uparrow.png"
                         alt="Arrow"
                         width={14}
                         height={14}
-                        className="h-3.5 w-3.5 object-contain rotate-30"
+                        className="h-3.5 w-3.5 rotate-30 object-contain"
                       />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               ))}

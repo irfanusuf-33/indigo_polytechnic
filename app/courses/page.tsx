@@ -44,7 +44,7 @@ const courseGroups: CourseGroup[] = [
       },
       {
         image: "/images/Image 2.svg",
-        slug: "",
+        slug: "bsb80120-graduate-diploma-of-management-learning",
         tag: "Business and Management",
         title: "BSB80120 | Graduate Diploma of Management (Learning)",
         duration: "52 weeks",
@@ -59,7 +59,7 @@ const courseGroups: CourseGroup[] = [
     courses: [
       {
         image: "/images/Image 3.svg",
-        slug: "",
+        slug: "ict60220-advanced-diploma-of-information-technology",
         tag: "INFORMATION Technology",
         title: "ICT60220 | Advance Diploma of Information Technology",
         duration: "104 weeks",
@@ -74,7 +74,7 @@ const courseGroups: CourseGroup[] = [
     courses: [
       {
         image: "/images/Image 4.svg",
-        slug: "",
+        slug: "rii60520-advanced-diploma-of-civil-construction-design",
         tag: "Civil Engineering",
         title: "RII60520 | Advance Diploma of Civil Construction Design",
         duration: "104 weeks",
