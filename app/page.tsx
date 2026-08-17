@@ -1,11 +1,15 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import AdmissionBanner from "@/components/layout/AdmissionBanner";
+import { courses as courseCatalog } from "@/data/courses";
 
 export default function Home() {
+  const router = useRouter();
   const [activeDot, setActiveDot] = useState(0);
+  const [courseSearch, setCourseSearch] = useState("");
   const programs = [
     {
       label: "Civil Engineering",
@@ -21,7 +25,7 @@ export default function Home() {
     },
   ];
 
-  const courses = [
+  const featuredCourses = [
     {
       tag: "CIVIL ENGINEERING",
       title: "RII60520 | Advance Diploma of Civil Construction Design",
@@ -91,34 +95,100 @@ export default function Home() {
     },
   ];
 
+  const courseSuggestions = useMemo(() => {
+    const query = courseSearch.trim().toLowerCase();
+
+    if (!query) {
+      return [];
+    }
+
+    return courseCatalog
+      .map((course) => ({
+        ...course,
+        searchableText:
+          `${course.code} ${course.title} ${course.category}`.toLowerCase(),
+      }))
+      .filter((course) => course.searchableText.includes(query))
+      .slice(0, 5);
+  }, [courseSearch]);
+
+  const handleCourseSearch = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const firstSuggestion = courseSuggestions[0];
+    if (firstSuggestion) {
+      router.push(`/courses/${firstSuggestion.slug}`);
+    }
+  };
+
   return (
     <main className="font-pop">
       <section className="flex flex-col items-center justify-center overflow-hidden bg-[#F2F3F4] px-6 pb-0 pt-8 sm:pt-12 lg:pt-16">
-        <div className="mb-10 flex w-full max-w-lg items-center rounded-full border border-zinc-200 bg-white px-2 py-2 shadow-sm">
-          <svg
-            className="ml-2 mr-2 h-5 w-5 shrink-0 text-[#0C06DA]"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"
+        <form
+          onSubmit={handleCourseSearch}
+          className="relative mb-10 w-full max-w-lg"
+        >
+          <div className="flex items-center rounded-full border border-zinc-200 bg-white px-2 py-2 shadow-sm">
+            <svg
+              className="ml-2 mr-2 h-5 w-5 shrink-0 text-[#0C06DA]"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"
+              />
+            </svg>
+
+            <input
+              type="search"
+              value={courseSearch}
+              onChange={(event) => setCourseSearch(event.target.value)}
+              placeholder="Search Courses"
+              aria-label="Search courses"
+              className="min-w-0 flex-1 bg-transparent text-sm text-zinc-700 outline-none placeholder:text-zinc-400"
             />
-          </svg>
 
-          <input
-            type="text"
-            placeholder="Search Courses"
-            className="flex-1 bg-transparent text-sm text-zinc-700 outline-none placeholder:text-zinc-400"
-          />
+            <button
+              type="submit"
+              disabled={courseSuggestions.length === 0}
+              className="rounded-full bg-[#0C06DA] px-6 py-2 text-sm font-medium text-white transition hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              Search
+            </button>
+          </div>
 
-          <button className="rounded-full bg-[#0C06DA] px-6 py-2 text-sm font-medium text-white transition hover:bg-blue-800">
-            Search
-          </button>
-        </div>
+          {courseSearch.trim() && (
+            <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-30 overflow-hidden rounded-[8px] border border-zinc-200 bg-white text-left shadow-xl">
+              {courseSuggestions.length > 0 ? (
+                <ul>
+                  {courseSuggestions.map((course) => (
+                    <li key={course.slug}>
+                      <Link
+                        href={`/courses/${course.slug}`}
+                        className="block px-4 py-3 transition hover:bg-[#F2F3F4] focus:bg-[#F2F3F4] focus:outline-none"
+                      >
+                        <span className="block text-sm font-semibold text-[#171717]">
+                          {course.code} | {course.title}
+                        </span>
+                        <span className="mt-1 block text-xs text-[#8A8A8A]">
+                          {course.category}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="px-4 py-3 text-sm text-[#8A8A8A]">
+                  No matching courses found.
+                </p>
+              )}
+            </div>
+          )}
+        </form>
 
         <h1 className="text-center text-4xl font-bold text-[#000000] sm:text-5xl lg:text-5xl">
           Welcome to <span className="text-[#0C06DA]">Indigo Polytechnic</span>
@@ -230,7 +300,7 @@ export default function Home() {
 
           <div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-              {courses.map((course) => (
+              {featuredCourses.map((course) => (
                 <div
                   key={course.title}
                   className="flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm"
