@@ -53,7 +53,7 @@ export default function ApplicationfromPage() {
           </p>
 
           <Link
-            href="/admissions/apply-form"
+            href="/agentregistrationform"
             className="font-pop mt-8 flex items-center gap-2 rounded-lg bg-[#0C06DA] px-6 py-3 text-[14px] font-normal text-white transition hover:bg-[#0a05b8]"
           >
             Start Application Form
