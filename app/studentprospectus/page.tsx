@@ -6,21 +6,24 @@ import Link from "next/link";
 export default function StudentProspectusPage() {
   return (
     <main className="font-pop">
-      <section className="relative flex h-[480px] w-full items-center justify-center overflow-hidden sm:h-[480px] lg:min-h-screen lg:h-auto lg:items-start">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/studentprospectbg.png')" }}
+      <section className="relative flex h-[380px] w-full items-center justify-center overflow-hidden sm:h-[420px] lg:h-[500px] lg:items-start">
+        <Image
+          src="/images/studentessential-bg.svg"
+          alt=""
+          fill
+          priority
+          className="object-cover"
         />
 
         <div className="absolute inset-0 bg-black/40" />
 
         <div className="relative z-10 flex flex-col items-center px-6 text-center lg:mt-48">
           <span className="font-pop mb-5 flex items-center gap-2 rounded-full bg-[#09049B] px-4 py-1.5 text-xs font-semibold uppercase italic tracking-wide text-white">
-            <span className=" text-pop h-1.5 w-1.5 rounded-full bg-white" />
-            Student Essentials{" "}
+            <span className="text-pop h-1.5 w-1.5 rounded-full bg-white" />
+            Student Essentials
           </span>
 
-          <h1 className=" font-pop text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
+          <h1 className=" font-pop text-3xl font-bold text-white sm:text-4xl lg:text-6xl">
             Plan Your <span className="text-pop text-[#3B82F6]">Future</span>{" "}
             with Confidence
           </h1>
@@ -95,6 +98,39 @@ export default function StudentProspectusPage() {
             >
               Download
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Need Assistance CTA */}
+      <section id="contact-support" className="mb-16 px-6 lg:px-8">
+        <div className="relative mx-auto max-w-[1100px] overflow-hidden rounded-[33px] px-6 py-16 text-center sm:px-10">
+          <Image
+            src="/images/blue-bg.svg"
+            alt=""
+            fill
+            className="object-cover"
+          />
+
+          <div className="relative z-10 mx-auto flex max-w-[640px] flex-col items-center">
+            <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#E7E6FB] px-4 py-1.5 text-[14px] font-bold uppercase italic tracking-wide text-[#09049B]">
+              <span className="h-2.5 w-2.5 rounded-full bg-[#09049B]" />
+              Need Assistance
+            </span>
+
+            <h2 className="text-[28px] font-bold leading-tight text-white sm:text-[38px]">
+              Can&apos;t Find the Right Form?
+            </h2>
+
+            <p className="mt-4 text-[15px] leading-6 text-white/80 sm:text-[18px]">
+              Our admissions and student support team is here to help you find
+              the correct form, answer your questions, and guide you through the
+              process.
+            </p>
+
+            <button className="mt-8 rounded-lg bg-white px-6 py-3 text-[16px] font-semibold text-[#171717] transition hover:bg-white/90">
+              Contact Support
+            </button>
           </div>
         </div>
       </section>

@@ -259,36 +259,6 @@ export default function TasmaniaLifePage() {
             explore during your study journey.
           </p>
 
-          {/* <div className="mt-14 grid grid-cols-1 gap-8 text-left sm:grid-cols-2 lg:grid-cols-3">
-            {exploreCards.map((card) => (
-              <div
-                key={card.tag}
-                className="overflow-hidden rounded-2xl border border-[#E7E7E7] p-6"
-              >
-                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg">
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-
-                <span className="mt-5 inline-flex items-center rounded-full bg-[#0C06DA] px-3 py-1 text-[11px] font-bold uppercase italic tracking-wide text-white">
-                  {card.tag}
-                </span>
-
-                <h3 className="mt-3 text-[18px] font-bold leading-5 text-[#171717]">
-                  {card.title}
-                </h3>
-
-                <p className="mt-3 text-[14px] leading-6 text-[#555555]">
-                  {card.description}
-                </p>
-              </div>
-            ))}
-          </div> */}
-
           <div className="mt-14 grid grid-cols-1 gap-[80px] text-left sm:grid-cols-2 lg:grid-cols-3">
             {exploreCards.map((card) => (
               <div
