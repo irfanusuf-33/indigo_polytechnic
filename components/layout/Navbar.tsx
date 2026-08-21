@@ -117,7 +117,10 @@ const Navbar = () => {
             <button
               type="button"
               className={`relative flex items-center gap-2 text-sm font-medium transition-colors ${
-                pathname.startsWith("/about") || pathname.startsWith("/company")
+                pathname.startsWith("/about") ||
+                pathname.startsWith("/whyindigo") ||
+                pathname.startsWith("/esos") ||
+                pathname.startsWith("/tasmania")
                   ? activeLink
                   : inactiveLink
               }`}
@@ -206,7 +209,11 @@ const Navbar = () => {
               className={`relative flex items-center gap-2 text-sm font-medium transition-colors ${
                 pathname.startsWith("/applicationform") ||
                 pathname.startsWith("/studentprospectus") ||
-                pathname.startsWith("/admissions")
+                pathname.startsWith("/studentsupport") ||
+                pathname.startsWith("/generalforms") ||
+                pathname.startsWith("/USI") ||
+                pathname.startsWith("/agentapplicationform") ||
+                pathname.startsWith("/agentlist")
                   ? activeLink
                   : inactiveLink
               }`}
@@ -346,8 +353,9 @@ const Navbar = () => {
                 onClick={() => toggleDropdown("company")}
                 className={`flex w-full items-center justify-between py-4 text-left text-sm font-medium ${
                   pathname.startsWith("/about") ||
-                  pathname.startsWith("/company") ||
-                  pathname.startsWith("/admissions/requirements")
+                  pathname.startsWith("/whyindigo") ||
+                  pathname.startsWith("/esos") ||
+                  pathname.startsWith("/tasmania")
                     ? "text-[#0C06DA]"
                     : "text-[#545454]"
                 }`}
@@ -389,7 +397,7 @@ const Navbar = () => {
                     </Link>
 
                     <Link
-                      href="/about"
+                      href="/whyindigo"
                       onClick={closeMenu}
                       className="block rounded-lg px-4 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
                     >
@@ -397,7 +405,7 @@ const Navbar = () => {
                     </Link>
 
                     <Link
-                      href="/admissions/requirements"
+                      href="/esos"
                       onClick={closeMenu}
                       className="block rounded-lg px-4 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
                     >
@@ -405,7 +413,7 @@ const Navbar = () => {
                     </Link>
 
                     <Link
-                      href="/admissions/requirements"
+                      href="/tasmania"
                       onClick={closeMenu}
                       className="block rounded-lg px-4 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
                     >
@@ -454,29 +462,35 @@ const Navbar = () => {
               >
                 <div className="overflow-hidden">
                   <div className="space-y-1 rounded-lg bg-[#F8FAFA] p-2">
-                    <Link
-                      href="/courses/vocational"
-                      onClick={closeMenu}
-                      className="block rounded-lg px-4 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
-                    >
-                      Business and Management
-                    </Link>
+                    {courseCategories.map(
+                      ({ category, courses: categoryCourses }, index) => (
+                        <div
+                          key={category}
+                          className={
+                            index < courseCategories.length - 1
+                              ? "border-b border-gray-200 pb-2"
+                              : ""
+                          }
+                        >
+                          <p className="px-4 py-2 text-sm font-semibold text-[#000000]">
+                            {category}
+                          </p>
 
-                    <Link
-                      href="/courses/information-technology"
-                      onClick={closeMenu}
-                      className="block rounded-lg px-4 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
-                    >
-                      Information Technology
-                    </Link>
-
-                    <Link
-                      href="/courses/civil-engineering"
-                      onClick={closeMenu}
-                      className="block rounded-lg px-4 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
-                    >
-                      Civil Engineering
-                    </Link>
+                          <div className="space-y-1">
+                            {categoryCourses.map((course) => (
+                              <Link
+                                key={course.slug}
+                                href={`/courses/${course.slug}`}
+                                onClick={closeMenu}
+                                className="block rounded-lg px-4 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
+                              >
+                                {course.code} {course.title}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ),
+                    )}
                   </div>
                 </div>
               </div>
@@ -489,8 +503,11 @@ const Navbar = () => {
                 className={`flex w-full items-center justify-between py-4 text-left text-sm font-medium ${
                   pathname.startsWith("/applicationform") ||
                   pathname.startsWith("/studentprospectus") ||
-                  pathname.startsWith("/admissions") ||
-                  pathname.startsWith("/generalforms")
+                  pathname.startsWith("/studentsupport") ||
+                  pathname.startsWith("/generalforms") ||
+                  pathname.startsWith("/USI") ||
+                  pathname.startsWith("/agentapplicationform") ||
+                  pathname.startsWith("/agentlist")
                     ? "text-[#0C06DA]"
                     : "text-[#545454]"
                 }`}
@@ -571,7 +588,7 @@ const Navbar = () => {
                           </Link>
 
                           <Link
-                            href="/admissions/usi"
+                            href="/USI"
                             onClick={closeMenu}
                             className="block rounded-lg px-2 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
                           >
@@ -587,7 +604,7 @@ const Navbar = () => {
 
                         <div className="space-y-1">
                           <Link
-                            href="/admissions/agent-application"
+                            href="/agentapplicationform"
                             onClick={closeMenu}
                             className="block rounded-lg px-2 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
                           >
@@ -595,7 +612,7 @@ const Navbar = () => {
                           </Link>
 
                           <Link
-                            href="/admissions/agent-list"
+                            href="/agentlist"
                             onClick={closeMenu}
                             className="block rounded-lg px-2 py-3 text-sm text-[#545454] hover:bg-[#E5F2F0] hover:text-[#0C06DA]"
                           >
