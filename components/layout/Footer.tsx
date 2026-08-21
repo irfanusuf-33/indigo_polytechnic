@@ -255,7 +255,7 @@ const Footer = () => {
                   href="tel:+61000000000"
                   className="pt-1 transition hover:text-[#0C06DA]"
                 >
-                  +61 XXX XXX XXX
+                  03 6159 6209
                 </a>
               </li>
             </ul>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -115,12 +116,12 @@ export default function LoginPage() {
               </a>
             </div>
 
-            <button
-              type="submit"
-              className=" font-pop mt-4 w-full rounded-lg bg-[#0C06DA] py-3 text-sm font-normal text-white transition hover:bg-[#0a05b8]"
+            <Link
+              href="/"
+              className="font-pop mt-4 w-full rounded-lg bg-[#0C06DA] py-3 text-center text-sm font-normal text-white transition hover:bg-[#0a05b8]"
             >
               Log In
-            </button>
+            </Link>
           </form>
         </div>
       </div>
