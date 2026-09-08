@@ -3,9 +3,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any, react/no-unescaped-entities */
 
 import React, { useState } from "react";
+import { apiUrl } from "@/utils/api";
 import { generateApplicationPdf } from "@/utils/generateApplicationPdf";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "/api";
+const STUDENT_APPLICATION_API_URL = apiUrl("/applications/student-application");
 
 const COUNTRY_CODES = [
   { code: "+61", name: "Australia", iso: "au", flag: "🇦🇺" },
@@ -609,7 +610,7 @@ export default function ApplicationForm() {
         }
       });
 
-      const response = await fetch("/api/igt-submit-form", {
+      const response = await fetch(STUDENT_APPLICATION_API_URL, {
         method: "POST",
         body: submitData,
       });
@@ -1077,7 +1078,7 @@ export default function ApplicationForm() {
       let response: Response | null = null;
       let result: any = {};
 
-      response = await fetch("/api/igt-submit-form", {
+      response = await fetch(STUDENT_APPLICATION_API_URL, {
         method: "POST",
         body: submitData,
       });

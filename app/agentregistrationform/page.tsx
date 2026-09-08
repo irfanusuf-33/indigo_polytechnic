@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
+import { apiUrl } from "@/utils/api";
 import { generateAgentApplicationPdf } from "@/utils/generateAgentApplicationPdf";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "/api";
+const AGENT_REGISTRATION_API_URL = apiUrl("/applications/agent-registration");
 
 export default function AgentsForm() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -238,14 +239,7 @@ export default function AgentsForm() {
       let response: Response | null = null;
       let result: any = {};
 
-      const baseUrl = process.env.NEXT_PUBLIC_API_URL || "/api";
-      const proxyUrl = baseUrl.endsWith("/contactus/agent-registration")
-        ? baseUrl
-        : `${baseUrl.replace(/\/$/, "")}/contactus/agent-registration`;
-
-      console.log("Sending agent form to:", proxyUrl);
-
-      response = await fetch(proxyUrl, {
+      response = await fetch(AGENT_REGISTRATION_API_URL, {
         method: "POST",
         body: submitData,
       });
